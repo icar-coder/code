@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000; /* Fondo oscuro para resaltar las partículas */
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Fondo detrás del corazón */
+}
+
+.heart {
+    width: 100px;
+    height: 90px;
+    position: relative;
+    animation: heartbeat 1.5s infinite;
+    z-index: 1; /* Corazón por encima de las partículas */
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    background-color: red;
+    border-radius: 50px 50px 0 0;
+}
+
+.heart::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.frase {
+    margin-top: 20px;
+    font-size: 24px;
+    color: red;
+    text-align: center;
+    z-index: 1; /* Frase por encima de las partículas */
+}
